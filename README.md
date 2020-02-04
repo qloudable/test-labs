@@ -24,6 +24,7 @@ The purpose of this lab is to give you an overview of the Reserved Public IP Ser
 
 **We recommend using Chrome or Edge as the broswer. Also set your browser zoom to 80%**
 
+<question id="164a8ec8-d0cf-4ce3-9c97-673f62f8c8bf" retry=3 required=false input=true time=60></question>
 
 - All screen shots are examples ONLY. Screen shots can be enlarged by Clicking on them
 
