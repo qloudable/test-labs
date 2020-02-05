@@ -123,6 +123,7 @@ The purpose of this lab is to give you an overview of the Reserved Public IP Ser
 ```
 ssh-keygen
 ```
+<question id="164a8ec8-d0cf-4ce3-9c97-673f62f8c8bf" retry=3 required=false input=true time=60></question>
 
 **HINT:** You can swap between OCI window, 
 git-bash sessions and any other application (Notepad, etc.) by Clicking the Switch Window icon 
