@@ -95,6 +95,12 @@ The purpose of this lab is to give you an overview of the Reserved Public IP Ser
 
 5. Verify all the information and  Click **Create**
 
+<p class="note-container">This paragraph is for note</p>
+<p class="accessDetails-container">This paragraph is for access details</p>
+<p class="ideatip-container">This paragraph is for idea</p>
+<p class="examTip-container">This paragraph is for examtip</p>
+<p class="funFact-container">This paragraph is for fun facte</p>
+
 6. This will create a VCN with followig components.
 
 **VCN**, **Public subnet**, **Private subnet**, **Internet gateway (IG)**, **NAT gateway (NAT)**, **Service gateway (SG)**
