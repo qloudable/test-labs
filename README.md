@@ -61,11 +61,11 @@ Non-required
 
 **Log into the Automation Anywhere portal**
 
-1.Open below url from Chrome Browser.
+1. Open below url from Chrome Browser.
 
 * **Automation Anywhere webportal:** [https://aa-aaudev.my.automationanywhere.digital](https://aa-aaudev.my.automationanywhere.digital)
 
-2.Login details below:
+2. Login details below:
 
  <p class="accessDetails-container"> 
  AA-User-Name: {{AA-User-Name}}  <br>
@@ -74,17 +74,17 @@ Non-required
 
 **Register your devices**
 
-1.From the Features panel of the Automation Anywhere Enterprise A2019 Control Room, navigate to DEVICES → My devices.
+1. From the Features panel of the Automation Anywhere Enterprise A2019 Control Room, navigate to DEVICES → My devices.
 
-2.In the top-right toolbar, click the Add local device icon. click on connect to my computer in opened window.
+2. In the top-right toolbar, click the Add local device icon. click on connect to my computer in opened window.
 
-3.Wait until the Bot Agent downloads and Install the agent by clicking the downloaded exe (AutomationAnywhereBotAgent_v1_0) file. 
+3. Wait until the Bot Agent downloads and Install the agent by clicking the downloaded exe (AutomationAnywhereBotAgent_v1_0) file. 
 
 ![alt text](https://previews.dropbox.com/p/orig/AAuJ_szQs6R7ue1ez_K_OE6kRdiO890CLbHIrQ5RQ0Po_XUDhU7SR1yz700pOTIQIskWkv1kf81wQ7kgnPh6Bgl5D2Yo93pm_2a5SkbtWfdf1PEFmabNnTatciH6gBD313z15IgkTdm6X-WJwnXI8p3tTmV-rQKRBsYmr72043Wz9_JQp-vwHCaxiKaeqVQObLfPKFzP3_8URk-cIxITJgFUkiX18K5gtXNVil7lVOeLBkg8jbIbtZ0gaDQRg9mR5m0IcYLxMnzXaGEf_yNk2Tx2mNPrSRBcTw5Zc_FPV-4FqeXdjbs1GwvUOwNwwFmp0vMajobh6ZnUX8481RbyfeJYav-_Zfy5KZ_2CDZyNtksta51n74svdDOzajafjuSTMw/p.gif?fv_content=true&size_mode=5)
 
-4.To enable the bot extention in the chrome browser, click the warning icon on the browser address toolbar at right corner and click the new extention added (Automation Anywhere) option. Click the  enable extention button on new window opened.
+4. To enable the bot extention in the chrome browser, click the warning icon on the browser address toolbar at right corner and click the new extention added (Automation Anywhere) option. Click the  enable extention button on new window opened.
 
-5.To open the Device login credentials section, click computer icon at top right corner of the browser beside the username. From the dropdown window you should see green tick mark and ready to run bot! message.
+5. To open the Device login credentials section, click computer icon at top right corner of the browser beside the username. From the dropdown window you should see green tick mark and ready to run bot! message.
 
 ## Create and structure the task bot
 
