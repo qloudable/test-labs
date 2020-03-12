@@ -45,9 +45,9 @@ Non-required
 
 **Login to RDP**
 
-1.Click Apps icon in the toolbar and select Remote Desktop Client to open a terminal window.
+1. Click Apps icon in the toolbar and select Remote Desktop Client to open a terminal window.
 
-2.RDP login in details below.
+2. RDP login in details below.
 
 
  <p class="accessDetails-container"> 
@@ -57,7 +57,7 @@ Non-required
 </p>
 
 
-3.Click on Accept in default window opened. Close all opened browsers.
+3. Click on Accept in default window opened. Close all opened browsers.
 
 **Log into the Automation Anywhere portal**
 
