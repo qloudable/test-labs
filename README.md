@@ -168,7 +168,7 @@ Great! You have completed the first step.
 
 <question id="24dbdc53-94b7-4655-a807-a3c3b39e3ef6" retry=5 required=false input=true time=5></question>
 
-## Step 2:Open the CSV file and launch the CRM
+## Step 2: Open the CSV file and launch the CRM
 
 **Open the CSV file**
 
@@ -199,7 +199,7 @@ Great! You have completed the first step.
 
 Now, you have opened the CSV file and launched the CRM website. 
 
-## Step 3:Populate the CRM webform
+## Step 3: Populate the CRM webform
 
 **Retrieve data from the CSV file**
 
@@ -289,7 +289,7 @@ Great! You have now completed the third step and populated all the customer deta
 
 <question id="6012f14c-49fd-449a-b13b-0657a757d035" retry=5 required=false input=true time=5></question>
 
-## Step 4:Save and send the CSV file to the Relationship Manager
+## Step 4: Save and send the CSV file to the Relationship Manager
 
 **Close the web portal window**
 
