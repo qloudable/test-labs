@@ -1,297 +1,332 @@
-#  Using Reserved Public IP. 
-  
+# Hello A2019 Bot Getting Started With Building Bots
+
 ## Table of Contents
 
 [Overview](#overview)
 
-[Pre-Requisites](#pre-requisites)
+[Pre-Requisites](#Pre-requisites)
 
-[Sign in to OCI Console and create reserved public IP](#sign-in-to-oci-console-and-create-reserved-public-ip)
+[Introduction](#Introduction)
 
-[Assign reserved public IP to first compute instance](#assign-reserved-public-ip-to-first-compute-instance)
+[Register your device](#register-your-device)
 
-[Un assign Reserved Public IP and assign it to a new compute instance](#un-assign-reserved-public-ip-and-assign-it-to-a-new-compute-instance)
+[Create and structure the task bot](#create-and-structure-the-task-bot)
 
-[Delete the resources](#delete-the-resources)
+[Step 1: Extract data from a web portal into a CSV file](#step-1-Extract-data-from-a-web-portal-into-a-CSV-file)
+
+[Step 2: Open the CSV file and launch the CRM](#step-2-Open-the-CSV-file-and-launch-the-CRM)
+
+[Step 3: Populate the CRM webform ](#step-3-Populate-the-CRM-webform)
+
+[Step 4: Save and send the CSV file to the Relationship Manager](#step-4-Save-and-send-the-CSV-file-to-the-Relationship-Manager)
+
+
 
 ## Overview
 
-A public IP address is an IPv4 address that is reachable from the internet. If a resource in your tenancy needs to be directly reachable from the internet, it must have a public IP address. Depending on the type of resource, there might be other requirements.
+This course provides the steps to automate a process using a software bot. This is done using Automation Anywhere Enterprise A2019, a premium Robotic Process Automation (RPA) platform from Automation Anywhere, which allows enterprises to deploy a digital workforce comprised of software bots that will automate business processes end to end.
 
-The purpose of this lab is to give you an overview of the Reserved Public IP Service and an example scenario to help you understand how the service works.
+## Introduction
+In this use case, you will learn to use Recorder and other actions to 
 
-**Some Key points;**
+Extract the data from a web portal into a CSV file. 
 
-**We recommend using Chrome or Edge as the broswer. Also set your browser zoom to 80%**
+Open the CSV file and launch the CRM website.Populate the CRM webform.
 
+Save and send the CSV file to the relationship manager. 
 
-- All screen shots are examples ONLY. Screen shots can be enlarged by Clicking on them
-
-- Login credentials are provided later in the guide (scroll down). Every User MUST keep these credentials handy.
-
-- Do NOT use compartment name and other data from screen shots.Only use  data(including compartment name) provided in the content section of the lab
-
-- Mac OS Users should use ctrl+C / ctrl+V to copy and paste inside the OCI Console
-
-- Login credentials are provided later in the guide (scroll down). Every User MUST keep these credentials handy.
-
-**Cloud Tenant Name**
-**User Name**
-**Password**
-**Compartment Name (Provided Later)**
-
-**Note:** OCI UI is being updated thus some screenshots in the instructions might be different than actual UI
+Run the task bot.
 
 ## Pre-Requisites
 
+Non-required
 
-1. Oracle Cloud Infrastructure account credentials (User, Password, Tenant, and Compartment)  
+## Register your device
 
-2. OCI Training : https://cloud.oracle.com/en_US/iaas/training
+**Login to RDP**
 
-3. Familiarity with OCI console: https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/console.htm
+1.Click Apps icon in the toolbar and select Remote Desktop Client to open a terminal window.
 
-4. Overview of Networking: https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm
+2.RDP login in details below.
 
-5. Familiarity with Compartment: https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/concepts.htm
 
-6. Connecting to a compute instance: https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/accessinginstance.htm
+ <p class="accessDetails-container"> 
+ RDP-Public-IP: {{RDP-Public-IP}}  <br>
+ RDP-USERNAME: {{RDP-username}} <br>
+ RDP-PASSWORD: {{RDP-Password}} <br>
+</p>
 
 
-## Sign in to OCI console and create reserved Public IP
+3.Click on Accept in default window opened. Close all opened browsers.
 
-**Note:** OCI UI is being updated thus some screenshots in the instructions might be different than actual UI
+**Log into the Automation Anywhere portal**
 
-**Before You Begin**
+1.Open below url from Chrome Browser.
 
+* **Automation Anywhere webportal:** [https://aa-aaudev.my.automationanywhere.digital](https://aa-aaudev.my.automationanywhere.digital)
 
-* **Tenant Name:** {{Cloud Tenant}}
-* **User Name:** {{User Name}}
-* **Password:** {{Password}}
-* **Compartment:**{{Compartment}}
+2.Login details below:
 
+ <p class="accessDetails-container"> 
+ AA-User-Name: {{AA-User-Name}}  <br>
+ AA-User-Password: {{AA-User-Password}} <br>
+ </p>
 
-1. Sign in using your tenant name, user name and password. Use the login option under **Oracle Cloud Infrastructure**
+**Register your devices**
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Grafana/img/Grafana_015.PNG" alt="image-alt-text">
+1.From the Features panel of the Automation Anywhere Enterprise A2019 Control Room, navigate to DEVICES → My devices.
 
-2. From the OCI Services menu,Click **Virtual Cloud Network**. Select the compartment assigned to you from drop down menu on left part of the screen under Networking and Click **Networking QuickStart**
+2.In the top-right toolbar, click the Add local device icon. click on connect to my computer in opened window.
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL001.PNG" alt="image-alt-text">
+3.Wait until the Bot Agent downloads and Install the agent by clicking the downloaded exe (AutomationAnywhereBotAgent_v1_0) file. 
 
-**NOTE:** Ensure the correct Compartment is selected under COMPARTMENT list
+![alt text](https://previews.dropbox.com/p/orig/AAuJ_szQs6R7ue1ez_K_OE6kRdiO890CLbHIrQ5RQ0Po_XUDhU7SR1yz700pOTIQIskWkv1kf81wQ7kgnPh6Bgl5D2Yo93pm_2a5SkbtWfdf1PEFmabNnTatciH6gBD313z15IgkTdm6X-WJwnXI8p3tTmV-rQKRBsYmr72043Wz9_JQp-vwHCaxiKaeqVQObLfPKFzP3_8URk-cIxITJgFUkiX18K5gtXNVil7lVOeLBkg8jbIbtZ0gaDQRg9mR5m0IcYLxMnzXaGEf_yNk2Tx2mNPrSRBcTw5Zc_FPV-4FqeXdjbs1GwvUOwNwwFmp0vMajobh6ZnUX8481RbyfeJYav-_Zfy5KZ_2CDZyNtksta51n74svdDOzajafjuSTMw/p.gif?fv_content=true&size_mode=5)
 
-3. Click **VCN with Internet Connectivity** and click **Start Workflow**
+4.To enable the bot extention in the chrome browser, click the warning icon on the browser address toolbar at right corner and click the new extention added (Automation Anywhere) option. Click the  enable extention button on new window opened.
 
-4. Fill out the dialog box:
+5.To open the Device login credentials section, click computer icon at top right corner of the browser beside the username. From the dropdown window you should see green tick mark and ready to run bot! message.
 
+## Create and structure the task bot
 
-- **VCN NAME**: Provide a name
-- **COMPARTMENT**: Ensure your compartment is selected
-- **VCN CIDR BLOCK**: Provide a CIDR block (10.0.0.0/16)
-- **PUBLIC SUBNET CIDR BLOCK**: Provide a CIDR block (10.0.1.0/24)
-- **PRIVATE SUBNET CIDR BLOCK**: Provide a CIDR block (10.0.2.0/24)
-- Click **Next**
+**Create a task bot**
 
-5. Verify all the information and  Click **Create**
+1.In the Getting started section of the Dashboard, click the Create a bot link.
 
-<p class="note-container">This paragraph is for note</p>
-<p class="accessDetails-container">This paragraph is for access details</p>
-<p class="ideatip-container">This paragraph is for idea</p>
-<p class="examTip-container">This paragraph is for examtip</p>
-<p class="funFact-container">This paragraph is for fun facte</p>
+2.In the Create Task Bot dialog box, enter a name for the bot, and then click Create & edit.
 
-6. This will create a VCN with followig components.
+## Step 1:Extract data from a web portal into a CSV file
 
-**VCN**, **Public subnet**, **Private subnet**, **Internet gateway (IG)**, **NAT gateway (NAT)**, **Service gateway (SG)**
+**Launch the source webportal**
 
-7. Click **View Virtual Cloud Network** to display your VCN details.
-             
-8. From OCI servies menu Click **Public IPs** under **Networking** 
+1.From the Actions panel, drag and drop the Launch website action to the first step.
 
-9. Click **Create Reserved Public IP**.  Fill out the dialog box:
+2.In the Action details panel, enter the below URL and then select Internet Explorer as the browser.
 
-- **NAME:** Provide a name (optional)
-- **COMPARTMENT:** Ensure correct compartment is selected
+* **Static-app-Fqdn:** http://{{Static-app-Fqdn}}
 
-10. Click **Create Reserved Public IP**
+<p class="note-container"> 
+ Note: For the purpose of this activity, we will use Internet Explorer.<br>
+</p>
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Using_Reserved_Public_IP/img/RESERVEDIP_HOL0020.PNG" alt="image-alt-text">
+3.Click Apply.
 
-## Assign reserved public IP to first compute instance
+**Open webportal in Internet Explorer Browser in another window**
 
-1. Click the Apps icon in the toolbar and select  Git-Bash to open a terminal window.
+1.Click on start button -> Type IE and select Internet Explore browser. Maximise the browser and close all default windows in browser.
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL006.PNG" alt="image-alt-text">
 
-2. Enter command 
+* **Static-app-Fqdn** : http://{{Static-app-Fqdn}} 
 
-```
-ssh-keygen
-```
 
-**HINT:** You can swap between OCI window, 
-git-bash sessions and any other application (Notepad, etc.) by Clicking the Switch Window icon 
+**Capture the data from the web table**
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL007.PNG" alt="image-alt-text">
+1.In the Control Room on the Variables panel, Click the + button and Enter the name Table and Type table. Click Create button.
 
-3. Press Enter When asked for 'Enter File in which to save the key', 'Created Directory, 'Enter passphrase', and 'Enter Passphrase again.
+2.Navigate back in the Control Room and From the Actions panel, drag and drop the Recorder: Capture action to the first step.
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL008.PNG" alt="image-alt-text">
+3.In the Object detail section of the Action details panel, click Window and from the drop-down list, select the appropriate window (Home Page - New User List - AA Static App - Internet Explore).
 
-4. You should now have the Public and Private keys:
+ **Note: You must click the Refresh windows icon to populate the drop-down list.**
 
-/C/Users/ PhotonUser/.ssh/id_rsa (Private Key)
+4.Click the Capture object button.
 
-/C/Users/PhotonUser/.ssh/id_rsa.pub (Public Key)
+5.Navigate to the web portal, hover your mouse over the table until a red outline appears , and then click to capture it.
 
-**NOTE:** id_rsa.pub will be used to create 
-Compute instance and id_rsa to connect via SSH into compute instance.
+6.Navigate back in the Control Room and from the Action drop-down list, select the Get table action.
 
-**HINT:** Enter command 
+7.In the Assign the output to variable (optional) field, select the variable Table-string and assign it to the output.
 
-```
-cd /C/Users/PhotonUser/.ssh (No Spaces) 
-```
+8.Click Apply.
 
-and then 
+**Write the captured table to a CSV file**
 
-```
-ls 
-```
+1.From the Actions panel, drag and drop the Write to file action at the end of the first step.
 
-to verify the two files exist. 
+2.In the Data table name field in the Action details panel, select the variable to which you assigned the captured table.
 
-5. In git-bash Enter command  
+3.In the Enter file name field, enter the file location of the CSV file.
 
-```
-cat /C/Users/PhotonUser/.ssh/id_rsa.pub
-```
+4.Select the Create folders/files if it doesn’t exist checkbox and then click the Override existing file option.
 
-, highlight the key and copy 
+5.From the Encoding list, select the ANSI encoding option. Note: Select the encoding option as per the encoding scheme of your system.
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL009.PNG" alt="image-alt-text">
+6.Click Apply.
 
-6. Click the apps icon, launch notepad and paste the key in Notepad (as backup)
+**Close the web portal window**
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0010.PNG" alt="image-alt-text">
+1.From the Actions panel, drag and drop the Window: Close action to the workbench.
 
-7. Switch to the OCI console. From OCI services menu, Click **Instances** under **Compute** 
+2.In the Action details panel, click Window and from the drop-down list, select the appropriate window (Home Page - New User List - AA Static App - Internet Explore).
 
-8. Click **Create Instance**. Fill out the dialog box:
+3.Click Apply.
 
-- **Name your instance**: Enter a name 
-- **Choose an operating system or image source**: For the image, we recommend using the Latest Oracle Linux available.
-- **Availability Domain**: Select availability domain
-- **Instance Type**: Select Virtual Machine 
-- **Instance Shape**: Select VM shape 
 
-**Under Configure Networking**
-- **Virtual cloud network compartment**: Select your compartment
-- **Virtual cloud network**: Choose the VCN 
-- **Subnet Compartment:** Choose your compartment. 
-- **Subnet:** Choose the Public Subnet under **Public Subnets** 
-- **Use network security groups to control traffic** : Leave un-checked
-- **Assign a public IP address**: Check this option
+**Note:** You must click the Refresh windows icon to populate the drop-down list. 
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0011.PNG" alt="image-alt-text">
 
-- **Boot Volume:** Leave the default
-- **Add SSH Keys:** Choose 'Paste SSH Keys' and paste the Public Key saved earlier.
+Great! You have completed the first step.
 
+<question id="24dbdc53-94b7-4655-a807-a3c3b39e3ef6" retry=5 required=false input=true time=5></question>
 
-11. Click **Create**
+## Step 2:Open the CSV file and launch the CRM
 
-12. Once the instance is in Running state, Click Instance name
+**Open the CSV file**
 
-13. In the instance detail page Click **Attached VNICs** and then VNIC name
+1.From the Actions panel, drag and drop the Excel advanced: Open action to the second step.
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Using_Reserved_Public_IP/img/RESERVEDIP_HOL0024.PNG" alt="image-alt-text">
+2.In the Action details panel, click Desktop file and enter the file path with name. (Example: C:\test.csv)
 
-14. In VNIC detail page Click **IP Addresses**, then **Edit** under the Action icon
+3.Open the file in a read-write mode and select the Sheet contains a header checkbox.
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Using_Reserved_Public_IP/img/RESERVEDIP_HOL0025.PNG" alt="image-alt-text">
+4.Click Apply. 
 
+**Position the cursor in the required cell to update the status**
 
-15. In the dialog box under Public IP Address choose RESERVED PUBLIC IP. From the drop down list select the Reserved Public IP created earlier. Click **Update**
+1.From the Actions panel, drag and drop the Excel advanced: Go to cell action to the second step.
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Using_Reserved_Public_IP/img/RESERVEDIP_HOL0026.PNG" alt="image-alt-text">
+2.In the Cell option section of the Action details panel, select the Specific cell option and enter the cell address. (Example: G2) 
 
-16. Note down the Public IP address.
+3.Click Apply. 
 
-***We have successfully assigned a Reserved Public IP address to the compute instance***
+**Launch the CRM web page**
 
-In git-bash Enter Command:
-```
- cd /C/Users/PhotonUser/.ssh
-```
-17. Enter **ls** and verify id_rsa file exists
-
-18. Enter command: **Make sure to use the Reserved Public IP that we assigned to the compute instane**
-```
-ssh -i id_rsa opc@<RESERVED_PUBLIC_IP_OF_COMPUTE>
-```
-
-**HINT:** If 'Permission denied error' is seen, ensure you are using '-i' in the ssh command
-
-19. Enter 'Yes' when prompted for security message
-
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0014.PNG" alt="image-alt-text">
+1.From the Actions panel, drag and drop the Launch website action at the end of the second step. 
+2.In the Action details panel, enter the below URL  ) and then select a browser.
  
-20. Verify opc@<COMPUTE_INSTANCE_NAME> appears on the prompt
+* **CRM-app-fqdn:** http://{{CRM-app-fqdn}} 
 
-***We successfully ssh into the compute instance using the reserved public IP. Next we will use the same Public IP and assign it to a different Compute instance***
+3.Click Apply. 
 
-## Un assign Reserved Public IP and assign it to a new compute instance
+Now, you have opened the CSV file and launched the CRM website. 
 
-1. Navigate to VNIC details page in OCI console window. Click **IP Addresses**, then **Edit** under the Action icon
+## Step 3:Populate the CRM webform
 
-2. In the dialog box under Public IP Address choose **NO PUBLIC IP** (Note the Warning message indicating
-Reserved Public IP will be unassigned) . Click **Update**
+**Retrieve data from the CSV file**
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Using_Reserved_Public_IP/img/RESERVEDIP_HOL0027.PNG" alt="image-alt-text">
+1.From the Actions panel, drag and drop the Excel advanced: Get multiple cells action to the third step.
+2.In the Select range of cells to be returned list of the Action details panel, specify that you want to get all rows.
+3.In the Assign value to the variable list, select the same variable to which you assigned the output.
+4.Click Apply.
 
-**Reserved Public IP has now been un-assigned from this compute instance. Next we will create a new compute instance and assign this same Public IP to it.**
+**Loop through the rows of the CSV file and assign each row to a variable**
 
-3. Create a second compute instance following same steps as for the first compute instance. **Make sure to not assign a Public IP to this compute either**
+1.From the Actions panel, drag and drop the Loop action to the workbench.
 
-4. Following same steps as earlier Edit the VNIC information for this compute instance and assign it the same Reserved Public IP that we created.
+2.In the Iterator list, select For each row in table.
 
-5. Remove the known_hosts file to ensure old entry for the host is deleted. Enter Command:
+3.From the Table variable list, select the same variable used earlier.
 
-```
-rm /c/Users/PhotonUser/.ssh/known_hosts
-```
+4.In the Assign the current row to this variable field, select a variable.
 
-6. Following same steps as earlier, ssh to the second compute instance using the Reserved Public IP address.Verify you logged into the second compute instance.
+**Note:** Make sure that the variable is already created with the variable type as Record.
+ 
 
-**This demonstrated how to use Reserved IP address functionality in OCI to access different compute instances**
+5.Click Apply. 
 
-## Delete the resources
+**Update each field in the CRM webform with the data from the CSV file**
 
-1. Switch to  OCI console window
+1.From the Actions panel, drag and drop the Recorder: Capture action within the Loop action.
 
-2. If your Compute instance is not displayed, From OCI services menu Click Instances under Compute
+2.In the Object detail section of the Action details panel, click Window and from the drop-down list, select the appropriate window (Create - AA CRM - Internet Explore)
 
-3. Locate first compute instance, Click Action icon and then **Terminate** 
+3.Click the Capture object button.
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0016.PNG" alt="image-alt-text">
+4.Navigate to the CRM web page and capture the First Name field.
 
-4. Make sure Permanently delete the attached Boot Volume is checked, Click Terminate Instance. Wait for instance to fully Terminate
+5.Navigate back in the Control Room and from the Action drop-down list, select Set text.
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0017.PNG" alt="image-alt-text">
+6.In the Keystrokes section, use the Insert a variable icon to insert the First Name field.
 
-5. Repeat the step to delete the scond compute instance
+7.Click Apply.
 
-6. From OCI services menu Click **Virtual Cloud Networks** under Networking, list of all VCNs will 
-appear.
+8.Repeat steps i to vii for each field in the CSV file. 
 
-7. Locate your VCN , Click Action icon and then **Terminate**. Click **Delete All** in the Confirmation window. Click **Close** once VCN is deleted
+**Capture the create button**
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0018.PNG" alt="image-alt-text">
+1.From the Actions panel, drag and drop the Recorder: Capture action within the Loop action.
 
-8. From OCI services menu Click **Networking**, then **Public IPs**,locate the Reserved Public IP you created. Click Action icon and then **Terminate**
+2.In the Object detail section of the Action details panel, click Window and from the drop-down list, select the appropriate window (Create - AA CRM - Internet Explore).
 
-<img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0019.PNG" alt="image-alt-text">
+3.Click the Capture object button.
 
-***Congratulations! You have successfully completed Using Reserved Public IP address lab. ***
+4.Navigate to the CRM web page and capture the 'create' button.
+
+5.Navigate back in the Control Room and from the Action drop-down list, select Click.
+
+6.Click Apply.
+
+**Capture the create new button**
+
+1.From the Actions panel, drag and drop the Recorder: Capture action within the Loop action.
+
+2.In the Object detail section of the Action details panel, click Window and from the drop-down list, select the appropriate window (Home Page - AA CRM - Internet Explore)
+
+3.Click the Capture object button.
+
+4.Navigate to the CRM web page and capture the 'create new' button at the top.
+
+5.Navigate back in the Control Room and from the Action drop-down list, select Click.
+
+6.Open the below url in the Internet Explore browser.
+
+
+   **CRM-app-fqdn:** http://{{CRM-app-fqdn}}  
+
+
+7.Navigate back in the Control Room. In the Object detail section of the Action details panel, click refresh windows and from the drop-down list, select the appropriate window (Create - AA CRM - Internet Explore).
+
+8.Click Apply.
+
+**Move the cursor one cell below**
+
+1.To move the cursor, from the Actions pane, drag and drop the Excel advanced: Go to cell action at the end of the loop.
+
+2.In the Active Cell list, select One cell below.
+
+3.Click Apply.
+
+Great! You have now completed the third step and populated all the customer details in the CRM webform.
+
+<question id="6012f14c-49fd-449a-b13b-0657a757d035" retry=5 required=false input=true time=5></question>
+
+## Step 4:Save and send the CSV file to the Relationship Manager
+
+**Close the web portal window**
+
+1.From the Actions panel, drag and drop the Window: Close action to the workbench.
+
+2.In the Action details panel, click Window and from the drop-down list, select the appropriate window (Create - AA CRM - Internet Explore).
+
+3.Click Apply.
+
+**Close the CSV file**
+
+1.From the Actions panel, drag and drop the Excel advanced: Close action to the fourth step.
+
+**Send an email to the Relationship Manager**
+
+1.From the Actions panel, drag and drop the Email: Send action to the step.
+
+2.In the To address field of the Action details panel, enter the Relationship Manager’s email ID.
+
+3.In the Subject field, update the text.
+
+4.In the Attachment (optional) section, click Desktop file, and enter the file path and name of the CSV file.
+
+5.In the Message field, enter the suitable message to be included in the body of the email.
+
+6.In the Send email via list, select the application for sending the email.
+
+7.Click Apply. 
+
+8.Your bot is now ready! 
+
+9.Close all open Internet Explorer windows and Excel spreadsheets.
+
+10.To run the bot, click Run.
+
+**Conclusion:**
+
+Congratulations! You have now successfully created the bot that would extract data from a web portal, capture it in an excel sheet, and also notify the email recipients. 
+
+Summary: In this course, you learned the steps to build a bot in a few clicks to automate the process.
