@@ -104,7 +104,7 @@ how easy it is to move additional storage with applicatons/tools installed betwe
 
 **VCN**, **Public subnet**, **Private subnet**, **Internet gateway (IG)**, **NAT gateway (NAT)**, **Service gateway (SG)**
 
-7. Click **View Virtual Cloud Network** to display your VCN details. t <y>.
+7. Click **View Virtual Cloud Network** to display your VCN details. t <yfgh>.
              
 8. We will open port 80 on this VCN to provide http access to app on the compute instance(to be installed later on. Click **Security List** and then **Default Security list for< YOUR_VCN_NAME >;**
 
