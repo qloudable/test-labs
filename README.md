@@ -90,10 +90,6 @@ how easy it is to move additional storage with applicatons/tools installed betwe
 
 4. Fill out the dialog box:
 
-1. test1
-1. test2
-1. test3
-10. test4
 
 - **VCN NAME**: Provide a name
 - **COMPARTMENT**: Ensure your compartment is selected
@@ -110,7 +106,7 @@ how easy it is to move additional storage with applicatons/tools installed betwe
 
 7. Click **View Virtual Cloud Network** to display your VCN details.
              
-8. We will open port 80 on this VCN to provide http access to app on the compute instance(to be installed later on. Click **Security List** and then **Default Security list for<YOUR_VCN_NAME>**
+8. We will open port 80 on this VCN to provide http access to app on the compute instance(to be installed later on. Click **Security List** and then **Default Security list for&lt;YOUR_VCN_NAME&gt;**
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/Customer_Lab_001.PNG" alt="image-alt-text">
 
@@ -214,7 +210,7 @@ cat /C/Users/PhotonUser/.ssh/id_rsa.pub
 
 12. Enter command 
 ```
-ssh -i id_rsa opc@<PUBLIC_IP_OF_COMPUTE>
+ssh -i id_rsa opc@&lt;PUBLIC_IP_OF_COMPUTE&gt;
 ```
 
 **HINT:** If 'Permission denied error' is seen, ensure you are using '-i' in the ssh command. You MUST type the command, do NOT copy and paste ssh command
@@ -223,7 +219,7 @@ ssh -i id_rsa opc@<PUBLIC_IP_OF_COMPUTE>
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL0014.PNG" alt="image-alt-text">
  
-14. Verify opc@<COMPUTE_INSTANCE_NAME> appears on the prompt
+14. Verify opc@&lt;COMPUTE_INSTANCE_NAME&gt; appears on the prompt
 
 15. From OCI services menu Click **Block Volumes** under Block Storage, then Click **Create Block Volume**.
 
@@ -540,6 +536,3 @@ appear.
 4. In OCI console window, Click your compute instance name and in **Attached Block Volumes** section Click the action icon and Click **Detach**
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/Customer_Lab_020.PNG" alt="image-alt-text">
-×
-Drag and Drop
-The image will be downloaded
