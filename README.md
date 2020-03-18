@@ -93,6 +93,7 @@ how easy it is to move additional storage with applicatons/tools installed betwe
 1. test1
 1. test2
 1. test3
+10. test4
 
 - **VCN NAME**: Provide a name
 - **COMPARTMENT**: Ensure your compartment is selected
