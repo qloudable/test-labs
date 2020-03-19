@@ -1,4 +1,4 @@
-# Deploying Jenkins
+# Deploy On Jenkins
   
 ## Table of Contents
 
@@ -51,8 +51,6 @@ Faster software development has become a competitive advantage for companies. Th
 4. Overview of Networking: https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm
 
 5. Familiarity with Compartment: https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/concepts.htm
-
-6. Connecting to a compute instance: https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/accessinginstance.htm
 
 ## Sign in to OCI Console and create VCN
 
