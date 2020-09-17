@@ -56,18 +56,24 @@ Faster software development has become a competitive advantage for companies. Th
 ## Sign in to OCI Console and create VCN
 
 <p class="accessDetails-container">
+  
+ Faster software development has become a competitive advantage for companies. The automation of software development processes facilitates speed and consistency, which led to the rise for having a Continuous Integration (CI) and Continuous Delivery and Deployment (CD) pipelines. 
+ </p>
+ 
 * **Tenant Name:** {{Cloud Tenant}}
 * **User Name:** {{User Name}}
 * **Password:** {{Password}}
 * **Compartment:**{{Compartment}}
-</p>
+
 <p class="note-container">
+  Jenkins is a very popular product among Oracle  Cloud Infrastructure customers, which can automate all of the phases of CI and CD. You can host Jenkins on Oracle Cloud Infrastructure to centralize your build automation and scale your deployment as the needs of your software projects grow.
+  </p>
 1. Sign in using your tenant name, user name and password. Use the login option under **Oracle Cloud Infrastructure**
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Grafana/img/Grafana_015.PNG" alt="image-alt-text">
 
 2. From the OCI Services menu,Click **Virtual Cloud Network**. Select the compartment assigned to you from drop down menu on left part of the screen under Networking and Click **Networking QuickStart**
-</p>
+
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL001.PNG" alt="image-alt-text">
 
 ```
@@ -91,13 +97,14 @@ ls -a <test>
 4. Fill out the dialog box:
 
 <p class="ideatip-container">
+  Faster software development has become a competitive advantage for companies. The automation of software development processes facilitates speed and consistency, which led to the rise for having a Continuous Integration (CI) and Continuous Delivery and Deployment (CD) pipelines. 
+  </p>
 - **VCN NAME**: Provide a name
 - **COMPARTMENT**: Ensure your compartment is selected
 - **VCN CIDR BLOCK**: Provide a CIDR block (10.0.0.0/16)
 - **PUBLIC SUBNET CIDR BLOCK**: Provide a CIDR block (10.0.1.0/24)
 - **PRIVATE SUBNET CIDR BLOCK**: Provide a CIDR block (10.0.2.0/24)
 - Click **Next**
-</p>
 
 5. Verify all the information and  Click **Create**
 
@@ -109,8 +116,10 @@ ls -a <test>
                     
 ##  Create Compute instance, configure OCI CLI and upload API keys
 <p class="examTip-container">
+  You can host Jenkins on Oracle Cloud Infrastructure to centralize your build automation and scale your deployment as the needs of your software projects grow.
+  </p>
 1. Click the Apps icon in the toolbar and select  Git-Bash to open a terminal window.
-</p>
+
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL006.PNG" alt="image-alt-text">
 
 2. Enter command 
@@ -126,13 +135,16 @@ ssh-keygen
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL008.PNG" alt="image-alt-text">
 
 <p class="funFact-container">
+  Faster software development has become a competitive advantage for companies. The automation of software development processes facilitates speed and consistency, which led to the rise for having a Continuous Integration (CI) and Continuous Delivery and Deployment (CD) pipelines. 
+  </p>
+  
 4. You should now have the Public and Private keys:
 
 /C/Users/ PhotonUser/.ssh/id_rsa (Private Key)
 
 /C/Users/PhotonUser/.ssh/id_rsa.pub (Public Key)
 
-</p>
+
 **NOTE:** id_rsa.pub will be used to create 
 Compute instance and id_rsa to connect via SSH into compute instance.
 
