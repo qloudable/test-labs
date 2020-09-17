@@ -76,9 +76,7 @@ Faster software development has become a competitive advantage for companies. Th
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL001.PNG" alt="image-alt-text">
 
-```
-ls =a <test>
-```
+
 
 ```bash
 ls -a <test>
