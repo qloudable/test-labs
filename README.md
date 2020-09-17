@@ -52,19 +52,22 @@ Faster software development has become a competitive advantage for companies. Th
 
 5. Familiarity with Compartment: https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/concepts.htm
 
+
 ## Sign in to OCI Console and create VCN
 
+<p class="accessDetails-container">
 * **Tenant Name:** {{Cloud Tenant}}
 * **User Name:** {{User Name}}
 * **Password:** {{Password}}
 * **Compartment:**{{Compartment}}
-
+</p>
+<p class="note-container">
 1. Sign in using your tenant name, user name and password. Use the login option under **Oracle Cloud Infrastructure**
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/Grafana/img/Grafana_015.PNG" alt="image-alt-text">
 
 2. From the OCI Services menu,Click **Virtual Cloud Network**. Select the compartment assigned to you from drop down menu on left part of the screen under Networking and Click **Networking QuickStart**
-
+</p>
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL001.PNG" alt="image-alt-text">
 
 ```
@@ -75,20 +78,26 @@ ls =a <test>
 ls -a <test>
 ```
 
+<question id="0077a592-14cf-4358-a677-7eb9e1a0ff31" retry=3 required=false input=true time=3></question>
+
 **NOTE:** Ensure the correct Compartment is selected under COMPARTMENT list
 
+<question id="00a5c61d-9250-4d39-80f9-9d87f029472f" retry=3 required=false input=true time=3></question>
 
 3. Click **VCN with Internet Connectivity** and click **Start Workflow**
 
+<question id="009d8b76-3c4e-4c05-99fb-b8dc61478741" retry=3 required=false input=true time=3></question>
+
 4. Fill out the dialog box:
 
-
+<p class="ideatip-container">
 - **VCN NAME**: Provide a name
 - **COMPARTMENT**: Ensure your compartment is selected
 - **VCN CIDR BLOCK**: Provide a CIDR block (10.0.0.0/16)
 - **PUBLIC SUBNET CIDR BLOCK**: Provide a CIDR block (10.0.1.0/24)
 - **PRIVATE SUBNET CIDR BLOCK**: Provide a CIDR block (10.0.2.0/24)
 - Click **Next**
+</p>
 
 5. Verify all the information and  Click **Create**
 
@@ -99,9 +108,9 @@ ls -a <test>
 7. Click **View Virtual Cloud Network** to display your VCN details.
                     
 ##  Create Compute instance, configure OCI CLI and upload API keys
-
+<p class="examTip-container">
 1. Click the Apps icon in the toolbar and select  Git-Bash to open a terminal window.
-
+</p>
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL006.PNG" alt="image-alt-text">
 
 2. Enter command 
@@ -116,12 +125,14 @@ ssh-keygen
 
 <img src="https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/qloudable/OCI_Quick_Start/img/RESERVEDIP_HOL008.PNG" alt="image-alt-text">
 
+<p class="funFact-container">
 4. You should now have the Public and Private keys:
 
 /C/Users/ PhotonUser/.ssh/id_rsa (Private Key)
 
 /C/Users/PhotonUser/.ssh/id_rsa.pub (Public Key)
 
+</p>
 **NOTE:** id_rsa.pub will be used to create 
 Compute instance and id_rsa to connect via SSH into compute instance.
 
