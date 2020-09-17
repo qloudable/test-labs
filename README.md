@@ -56,9 +56,8 @@ Faster software development has become a competitive advantage for companies. Th
 ## Sign in to OCI Console and create VCN
 
 <p class="accessDetails-container">
-  
- Faster software development has become a competitive advantage for companies. The automation of software development processes facilitates speed and consistency, which led to the rise for having a Continuous Integration (CI) and Continuous Delivery and Deployment (CD) pipelines. 
- </p>
+  Faster software development has become a competitive advantage for companies. The automation of software development processes facilitates speed and consistency, which led to the rise for having a Continuous Integration (CI) and Continuous Delivery and Deployment (CD) pipelines.
+</p>
  
 * **Tenant Name:** {{Cloud Tenant}}
 * **User Name:** {{User Name}}
