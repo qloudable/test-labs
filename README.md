@@ -58,8 +58,8 @@ Faster software development has become a competitive advantage for companies. Th
   Faster software development has become a competitive advantage for companies. The automation of software development processes facilitates speed and consistency, which led to the rise for having a Continuous Integration (CI) and Continuous Delivery and Deployment (CD) pipelines.
 </p>
  
-* **Tenant Name:** {{Cloud Tenant}}
-* **User Name:** {{User Name}}
+* **Tenant Name:** {{Cloud_Tenant}}
+* **User Name:** {{User_Name}}
 * **Password:** {{Password}}
 * **Compartment:**{{Compartment}}
 
